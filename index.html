@@ -64,12 +64,35 @@
             margin-top: 1.5rem;
             margin-bottom: 0.75rem;
             letter-spacing: 0.5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+
+        .sidebar h4:hover {
+            color: var(--text-color);
         }
 
         .sidebar ul {
             list-style: none;
             padding: 0;
             margin: 0;
+            display: none;
+        }
+
+        .sidebar ul.expanded {
+            display: block;
+        }
+
+        .toggle-icon {
+            font-size: 0.8rem;
+            transition: transform 0.2s ease;
+        }
+
+        .toggle-icon.expanded {
+            transform: rotate(180deg);
         }
 
         .sidebar li {
@@ -137,52 +160,53 @@
     </header>
     <div class="container">
         <nav class="sidebar">
-            <h4>Module P: Python</h4>
-            <ul>
-                <li><a href="P00.html">P00: Execution Environment</a></li>
-                <li><a href="P01_PythonLanguageReference.html">P01: Language Reference</a></li>
-                <li><a href="P02_PythonBuiltinTypes.html">P02: Builtin Types</a></li>
-                <li><a href="P03.html">P03: Builtin Functions</a></li>
-                <li><a href="P04.html">P04: Pandas</a></li>
+            <h4 class="module-title">Module P: Python <span class="toggle-icon">&#9660;</span></h4>
+            <ul class="module-list">
+                <li><a href="P00.html" title="你的 P00 註記寫在這裡">P00: Execution Environment</a></li>
+                <li><a href="P01_PythonLanguageReference.html" title="你的 P01 註記寫在這裡">P01: Language Reference</a></li>
+                <li><a href="P02_PythonBuiltinTypes.html" title="你的 P02 註記寫在這裡">P02: Builtin Types</a></li>
+                <li><a href="P03.html" title="你的 P03 註記寫在這裡">P03: Builtin Functions</a></li>
+                <li><a href="P04.html" title="你的 P04 註記寫在這裡">P04: Pandas</a></li>
             </ul>
 
-            <h4>Module S: Security</h4>
-            <ul>
-                <li><a href="S01.html">S01: Security Management</a></li>
+            <h4 class="module-title">Module S: Security <span class="toggle-icon">&#9660;</span></h4>
+            <ul class="module-list">
+                <li><a href="S01.html" title="你的 S01 註記寫在這裡">S01: Security Management</a></li>
             </ul>
 
-            <h4>Module M: Algorithms</h4>
-            <ul>
-                <li><a href="M01.html">M01: Model</a></li>
-                <li><a href="M02.html">M02: Classification</a></li>
-                <li><a href="M03.html">M03: GUI Workflow</a></li>
-                <li><a href="M04.html">M04: Tree-Based Methods</a></li>
-                <li><a href="M05.html">M05: Clustering</a></li>
-                <li><a href="M06.html">M06: Dimension Reduction</a></li>
-                <li><a href="M07.html">M07: Problematic Data</a></li>
+            <h4 class="module-title">Module M: Algorithms <span class="toggle-icon">&#9660;</span></h4>
+            <ul class="module-list">
+                <li><a href="M01.html" title="你的 M01 註記寫在這裡">M01: Model</a></li>
+                <li><a href="M02.html" title="你的 M02 註記寫在這裡">M02: Classification</a></li>
+                <li><a href="M03.html" title="你的 M03 註記寫在這裡">M03: GUI Workflow</a></li>
+                <li><a href="M04.html" title="你的 M04 註記寫在這裡">M04: Tree-Based Methods</a></li>
+                <li><a href="M05.html" title="你的 M05 註記寫在這裡">M05: Clustering</a></li>
+                <li><a href="M06.html" title="你的 M06 註記寫在這裡">M06: Dimension Reduction</a></li>
+                <li><a href="M07.html" title="你的 M07 註記寫在這裡">M07: Problematic Data</a></li>
             </ul>
 
-            <h4>Module N: Neural Networks</h4>
-            <ul>
-                <li><a href="N01.html">N01</a></li>
-                <li><a href="N02.html">N02</a></li>
-                <li><a href="N03.html">N03</a></li>
-                <li><a href="N04.html">N04</a></li>
-                <li><a href="N05.html">N05</a></li>
-                <li><a href="N06.html">N06</a></li>
-                <li><a href="N07.html">N07</a></li>
-                <li><a href="N08.html">N08</a></li>
-                <li><a href="N09.html">N09</a></li>
+            <h4 class="module-title">Module N: Neural Networks <span class="toggle-icon">&#9660;</span></h4>
+            <ul class="module-list">
+                <li><a href="N01.html" title="你的 N01 註記寫在這裡">N01</a></li>
+                <li><a href="N02.html" title="你的 N02 註記寫在這裡">N02</a></li>
+                <li><a href="N03.html" title="你的 N03 註記寫在這裡">N03</a></li>
+                <li><a href="N04.html" title="你的 N04 註記寫在這裡">N04</a></li>
+                <li><a href="N05.html" title="你的 N05 註記寫在這裡">N05</a></li>
+                <li><a href="N06.html" title="你的 N06 註記寫在這裡">N06</a></li>
+                <li><a href="N07.html" title="你的 N07 註記寫在這裡">N07</a></li>
+                <li><a href="N08.html" title="你的 N08 註記寫在這裡">N08</a></li>
+                <li><a href="N09.html" title="你的 N09 註記寫在這裡">N09</a></li>
             </ul>
         </nav>
         <main class="content-pane">
             <div id="welcome-message">
                 <h3>Welcome to DS4CS-2026</h3>
-                <p>Data Science for Cyber Security (DS4CS-2026) is a course designed to introduce the fundamental concepts and techniques of data science with cyber security.</p>
+                <p>Data Science for Cyber Security is a course designed to introduce the fundamental concepts and techniques of data science with cyber security.</p>
                 <p>Please use the navigation on the left to access the course materials. For schedule, announcements, and homework, please refer to the official course websites:</p>
                 <ul>
                     <li><a href="https://sites.google.com/view/mikehsiao/teaching/ds4cs-2026" target="_blank">DS4CS-2026 Course Website</a></li>
                     <li><a href="https://hsiaom26.github.io/ds4cs-2026/" target="_blank">GitHub Repository</a></li>
+                    <li><a href="https://hsiaom26.github.io/DS4CS-26/" target="_blank">GitHub.io Pages</a></li>
                 </ul>
             </div>
             <iframe id="content-frame" name="content-frame" style="display:none;"></iframe>
@@ -195,6 +219,20 @@
             const iframe = document.getElementById('content-frame');
             const welcomeMessage = document.getElementById('welcome-message');
             let currentActive = null;
+
+            // Module collapse/expand logic
+            const moduleTitles = document.querySelectorAll('.module-title');
+            moduleTitles.forEach(title => {
+                title.addEventListener('click', () => {
+                    const list = title.nextElementSibling;
+                    const icon = title.querySelector('.toggle-icon');
+                    
+                    if (list && list.tagName === 'UL') {
+                        list.classList.toggle('expanded');
+                        icon.classList.toggle('expanded');
+                    }
+                });
+            });
 
             links.forEach(link => {
                 // Only apply this logic to internal course material links
