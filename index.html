@@ -1,56 +1,226 @@
-
 <html>
 <head>
-    <title>DS4CS-2026</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DS4CS-2026 Course Materials</title>
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --sidebar-bg: #ffffff;
+            --text-color: #212529;
+            --link-color: #007bff;
+            --link-hover-color: #0056b3;
+            --accent-color: #007bff;
+            --border-color: #dee2e6;
+            --header-bg: #343a40;
+            --header-color: #ffffff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        header {
+            background-color: var(--header-bg);
+            color: var(--header-color);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            z-index: 10;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        .container {
+            display: flex;
+            flex-grow: 1;
+            overflow: hidden;
+        }
+
+        .sidebar {
+            width: 280px;
+            flex-shrink: 0;
+            background-color: var(--sidebar-bg);
+            border-right: 1px solid var(--border-color);
+            padding: 1.5rem;
+            overflow-y: auto;
+        }
+
+        .sidebar h4 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: #6c757d;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.5px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: var(--text-color);
+            display: block;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.2s ease, color 0.2s ease;
+            font-size: 0.95rem;
+        }
+
+        .sidebar a:hover {
+            background-color: var(--bg-color);
+        }
+
+        .sidebar a.active {
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: 500;
+        }
+
+        .content-pane {
+            flex-grow: 1;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #welcome-message {
+            padding: 2rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        #welcome-message h3 {
+            font-weight: 500;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        #welcome-message a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        #welcome-message a:hover {
+            text-decoration: underline;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
 </head>
 <body>
-    <h3>DS4CS-2026</h3>
-    <p>Data Science for Cyber Security (DS4CS-2026) is a course designed to introduce the fundamental concepts and techniques of data science with cyber security. The course covers topics such as data manipulation, data visualization, machine learning, and statistical analysis. Students will learn how to work with large datasets, apply data science methods to real-world problems, and communicate their findings effectively. The course website can be accessed at the following link:</p>
-    <ul>
-        <li><a href="https://sites.google.com/view/mikehsiao/teaching/ds4cs-2026" target="_blank">DS4CS-2026 Course Website (schedule, announcements, homework, etc)</a></li>
-        <li><a href="https://hsiaom26.github.io/ds4cs-2026/" target="_blank">GitHub Repository (code, documentation, data, etc)</a></li>
-        <li><a href="https://hsiaom26.github.io/DS4CS-26/index.html" target="_blank">GitHub.io Pages (course materials, interactive demos, etc)</a></li>
-    </ul>
-    <hr />
+    <header>
+        <h1>DS4CS-2026</h1>
+    </header>
+    <div class="container">
+        <nav class="sidebar">
+            <h4>Module P: Python</h4>
+            <ul>
+                <li><a href="P00.html">P00: Execution Environment</a></li>
+                <li><a href="P01_PythonLanguageReference.html">P01: Language Reference</a></li>
+                <li><a href="P02_PythonBuiltinTypes.html">P02: Builtin Types</a></li>
+                <li><a href="P03.html">P03: Builtin Functions</a></li>
+                <li><a href="P04.html">P04: Pandas</a></li>
+            </ul>
 
-    <h3>Course Materials</h3>
+            <h4>Module S: Security</h4>
+            <ul>
+                <li><a href="S01.html">S01: Security Management</a></li>
+            </ul>
 
-    <h4>Module P: Introduction Python Language and Libraries</h4>
-    <ul>
-        <li><a href="https://hsiaom26.github.io/DS4CS-26/P00.html" target="_blank">P00: Execution Environment</a></li>
-        <li><a href="https://hsiaom26.github.io/DS4CS-26/P01_PythonLanguageReference.html" target="_blank">P01: Python Language Reference</a></li>
-        <li><a href="https://hsiaom26.github.io/DS4CS-26/P02_PythonBuiltinTypes.html" target="_blank">P02: Python Builtin Types</a></li>
-        <li><a href="https://hsiaom26.github.io/DS4CS-26/P03.html" target="_blank">P03: Python Builtin Functions</a></li>
-        <li><a href="https://hsiaom26.github.io/DS4CS-26/P04.html" target="_blank">P04: Pandas</a></li>
-    </ul>
+            <h4>Module M: Algorithms</h4>
+            <ul>
+                <li><a href="M01.html">M01: Model</a></li>
+                <li><a href="M02.html">M02: Classification</a></li>
+                <li><a href="M03.html">M03: GUI Workflow</a></li>
+                <li><a href="M04.html">M04: Tree-Based Methods</a></li>
+                <li><a href="M05.html">M05: Clustering</a></li>
+                <li><a href="M06.html">M06: Dimension Reduction</a></li>
+                <li><a href="M07.html">M07: Problematic Data</a></li>
+            </ul>
 
-    <h4>Module S: Introduction to Security Management</h4>
-    <ul>
-        <li><a href="https://hsiaom26.github.io/DS4CS-26/S01.html" target="_blank">S01: Security Management</a></li>
-    </ul>
+            <h4>Module N: Neural Networks</h4>
+            <ul>
+                <li><a href="N01.html">N01</a></li>
+                <li><a href="N02.html">N02</a></li>
+                <li><a href="N03.html">N03</a></li>
+                <li><a href="N04.html">N04</a></li>
+                <li><a href="N05.html">N05</a></li>
+                <li><a href="N06.html">N06</a></li>
+                <li><a href="N07.html">N07</a></li>
+                <li><a href="N08.html">N08</a></li>
+                <li><a href="N09.html">N09</a></li>
+            </ul>
+        </nav>
+        <main class="content-pane">
+            <div id="welcome-message">
+                <h3>Welcome to DS4CS-2026</h3>
+                <p>Data Science for Cyber Security (DS4CS-2026) is a course designed to introduce the fundamental concepts and techniques of data science with cyber security.</p>
+                <p>Please use the navigation on the left to access the course materials. For schedule, announcements, and homework, please refer to the official course websites:</p>
+                <ul>
+                    <li><a href="https://sites.google.com/view/mikehsiao/teaching/ds4cs-2026" target="_blank">DS4CS-2026 Course Website</a></li>
+                    <li><a href="https://hsiaom26.github.io/ds4cs-2026/" target="_blank">GitHub Repository</a></li>
+                </ul>
+            </div>
+            <iframe id="content-frame" name="content-frame" style="display:none;"></iframe>
+        </main>
+    </div>
 
-    <h4>Module M: Introduction to Data Science and Algorithms</h4>
-    <ul>
-        <li><a href="https://hsiaom26.github.io/DS4CS-26/M01.html" target="_blank">M01: Model</a><p>Model, Linear Regression, MSE, Gradient Descent</p></li>
-        <li><a href="https://hsiaom26.github.io/DS4CS-26/M02.html" target="_blank">M02: Classification</a><p>Logistic Regression, Cross Entropy, Support Vector Machines, Evaluation Metrics</p></li>
-        <li><a href="https://hsiaom26.github.io/DS4CS-26/M03.html" target="_blank">M03: GUI Workflow</a><p>Orange</p></li>
-        <li><a href="https://hsiaom26.github.io/DS4CS-26/M04.html" target="_blank">M04: Tree-Based Methods</a><p>Decision Tree, Random Forest, Entropy, Information Gain, Gini Index, Chi-Square, Variance</p></li>
-        <li><a href="https://hsiaom26.github.io/DS4CS-26/M05.html" target="_blank">M05: Clustering</a><p>Distance Measures, K-Means, Hierarchical Clustering, DBSCAN, Silhouette Coefficient</p></li>
-        <li><a href="https://hsiaom26.github.io/DS4CS-26/M06.html" target="_blank">M06: Dimension Reduction</a><p>Principal Component Analysis, t-Distributed Stochastic Neighbor Embedding, UMAP</p></li>
-        <li><a href="https://hsiaom26.github.io/DS4CS-26/M07.html" target="_blank">M07: Problematic Data</a><p>Missing Values, Outliers, Imbalanced Classes</p></li>
-    </ul>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('.sidebar a');
+            const iframe = document.getElementById('content-frame');
+            const welcomeMessage = document.getElementById('welcome-message');
+            let currentActive = null;
 
-    <h4>Module N: Neural Networks</h4>
-    <ul>
-        <li><a href="https://hsiaom26.github.io/DS4CS-26/N01.html" target="_blank">N01</a></li>
-        <li><a href="https://hsiaom26.github.io/DS4CS-26/N02.html" target="_blank">N02</a></li>
-        <li><a href="https://hsiaom26.github.io/DS4CS-26/N03.html" target="_blank">N03</a></li>
-        <li><a href="https://hsiaom26.github.io/DS4CS-26/N04.html" target="_blank">N04</a></li>
-        <li><a href="https://hsiaom26.github.io/DS4CS-26/N05.html" target="_blank">N05</a></li>
-        <li><a href="https://hsiaom26.github.io/DS4CS-26/N06.html" target="_blank">N06</a></li>
-        <li><a href="https://hsiaom26.github.io/DS4CS-26/N07.html" target="_blank">N07</a></li>
-        <li><a href="https://hsiaom26.github.io/DS4CS-26/N08.html" target="_blank">N08</a></li>
-        <li><a href="https://hsiaom26.github.io/DS4CS-26/N09.html" target="_blank">N09</a></li>
-    </ul>
+            links.forEach(link => {
+                // Only apply this logic to internal course material links
+                if (link.href.includes('.html') && !link.target) {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+
+                        // On first click, hide welcome message and show iframe
+                        if (welcomeMessage.style.display !== 'none') {
+                            welcomeMessage.style.display = 'none';
+                            iframe.style.display = 'block';
+                        }
+
+                        // Load the content into the iframe
+                        iframe.src = link.href;
+
+                        // Update active link styling
+                        if (currentActive) {
+                            currentActive.classList.remove('active');
+                        }
+                        link.classList.add('active');
+                        currentActive = link;
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
