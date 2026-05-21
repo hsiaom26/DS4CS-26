@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P00: Execution Environment</title>
+    <style>
+        :root {
+            --bg: #f8f9fa;
+            --text: #212529;
+            --muted: #6c757d;
+            --border: #dee2e6;
+            --accent: #007bff;
+            --card: #ffffff;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 2rem;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        main {
+            max-width: 52rem;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin: 0 0 0.5rem;
+        }
+        .lead {
+            color: var(--muted);
+            margin: 0 0 2rem;
+        }
+        section {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+        h2 {
+            font-size: 1.15rem;
+            margin: 0 0 0.75rem;
+        }
+        h3 {
+            font-size: 0.95rem;
+            margin: 1rem 0 0.35rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        ul, ol {
+            margin: 0.5rem 0 0;
+            padding-left: 1.25rem;
+        }
+        li { margin-bottom: 0.35rem; }
+        a { color: var(--accent); }
+        code {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            font-size: 0.9em;
+            background: #f1f3f5;
+            padding: 0.1em 0.35em;
+            border-radius: 4px;
+        }
+        .note {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.95rem;
+            color: var(--muted);
+        }
+    </style>
+</head>
+<body>
+<main>
+    <h1>P00: Execution Environment</h1>
+    <p class="lead">Three common ways to run Python code and Jupyter notebooks (<code>.ipynb</code>) for this course.</p>
+
+    <section id="colab">
+        <h2>Google Colab</h2>
+        <p><strong>Best for:</strong> getting started quickly with no local setup; sharing notebooks via a link.</p>
+        <p>Colab is a free, browser-based Jupyter environment backed by Google Drive. Upload a notebook or open one from GitHub, then run cells in the cloud. A GPU runtime is optional and not required for the Python modules in this course.</p>
+        <h3>Typical workflow</h3>
+        <ol>
+            <li>Sign in at <a href="https://colab.research.google.com/" target="_blank" rel="noopener">colab.research.google.com</a>.</li>
+            <li><strong>File → Upload notebook</strong>, or open a notebook from a GitHub URL.</li>
+            <li>Select a runtime if prompted, then <strong>Runtime → Run all</strong> (or run cells one by one).</li>
+            <li>Install extra packages in a cell when needed, e.g. <code>!pip install yfinance</code>.</li>
+        </ol>
+        <h3>Notes</h3>
+        <ul>
+            <li>Sessions are temporary; save a copy to Drive or download the <code>.ipynb</code> when you are done.</li>
+            <li>Network access is available, which matters for notebooks that download data (e.g. stock prices).</li>
+        </ul>
+    </section>
+
+    <section id="anaconda">
+        <h2>Local Anaconda (conda)</h2>
+        <p><strong>Best for:</strong> a full local data-science stack with isolated environments and reproducible package installs.</p>
+        <p><a href="https://www.anaconda.com/download" target="_blank" rel="noopener">Anaconda</a> (or Miniconda) ships with Python, <code>conda</code>, and Jupyter. Use <code>conda install</code> or <code>pip</code> inside an environment to add libraries such as NumPy, pandas, and yfinance.</p>
+        <h3>Typical workflow</h3>
+        <ol>
+            <li>Install Anaconda or Miniconda for your operating system.</li>
+            <li>Create and activate an environment, for example:
+                <br><code>conda create -n ds4cs python=3.13 -y</code>
+                <br><code>conda activate ds4cs</code></li>
+            <li>Install packages, e.g. <code>conda install pandas numpy jupyter -y</code> or <code>pip install yfinance</code>.</li>
+            <li>From the course folder, start Jupyter: <code>jupyter notebook</code> or <code>jupyter lab</code>, then open the <code>.ipynb</code> files.</li>
+        </ol>
+        <h3>Notes</h3>
+        <ul>
+            <li>Prefer <code>conda install</code> for scientific stacks; use <code>pip</code> when a package is not on conda-forge.</li>
+            <li>Activate the same environment each time so kernel and packages stay consistent.</li>
+        </ul>
+    </section>
+
+    <section id="vscode">
+        <h2>VS Code + python.org + extensions</h2>
+        <p><strong>Best for:</strong> editing notebooks and <code>.py</code> files in one editor with debugging and Git integration.</p>
+        <p>Install Python from <a href="https://www.python.org/downloads/" target="_blank" rel="noopener">python.org</a> (or use an existing conda environment as the interpreter). In <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">Visual Studio Code</a>, add the official extensions so <code>.ipynb</code> files run like Jupyter notebooks.</p>
+        <h3>Recommended extensions</h3>
+        <ul>
+            <li><strong>Python</strong> (Microsoft) — language support, environments, debugging.</li>
+            <li><strong>Jupyter</strong> (Microsoft) — open and run <code>.ipynb</code> notebooks inside VS Code.</li>
+        </ul>
+        <h3>Typical workflow</h3>
+        <ol>
+            <li>Install Python 3.10+ (3.13 recommended for this course).</li>
+            <li>Install VS Code and the Python + Jupyter extensions.</li>
+            <li>Open the course folder; select the interpreter (<strong>Command Palette → Python: Select Interpreter</strong>).</li>
+            <li>Open a <code>.ipynb</code> file and run cells with the play controls or <strong>Run All</strong>.</li>
+            <li>Install packages in a terminal: <code>python -m pip install pandas numpy yfinance jupyter</code>.</li>
+        </ol>
+        <h3>Notes</h3>
+        <ul>
+            <li>On Windows, check “Add python.exe to PATH” during installation, or use the Python launcher (<code>py</code>).</li>
+            <li>The chosen interpreter must match the environment where you installed course dependencies.</li>
+        </ul>
+    </section>
+
+    <p class="note">Course notebooks are ordinary Jupyter files. Use any environment above; run cells from top to bottom unless a notebook says otherwise. Python <strong>3.10+</strong> (3.13 recommended) is assumed for modules P01–P04.</p>
+</main>
+</body>
+</html>
